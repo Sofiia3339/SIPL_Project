@@ -1,0 +1,12 @@
+[
+ {"source":"begin skip end","term":"id"},
+ {"source":"begin X:=5 end","term":"AS^X(5)"},
+ {"source":"begin X:=-2 end","term":"AS^X(-2)"},
+ {"source":"begin R:=X+Y*Z end","term":"AS^R(S²(add, X⇒, S²(mult, Y⇒, Z⇒)))"},
+ {"source":"begin X:=X-1;skip end","term":"(AS^X(S²(sub, X⇒, 1)) · id)"},
+ {"source":"begin if X=0 then skip else X:=1 end","term":"IF(S²(eq, X⇒, 0), id, AS^X(1))"},
+ {"source":"begin while X>0 do X:=X-1 end","term":"WH(S²(gr, X⇒, 0), AS^X(S²(sub, X⇒, 1)))"},
+ {"source":"begin if ¬ X=0 ∨ X>1 then skip else skip end","term":"IF(S²(or, S¹(neg, S²(eq, X⇒, 0)), S²(gr, X⇒, 1)), id, id)"},
+ {"source":"begin begin X:=(2+3)*4 end end","term":"AS^X(S²(mult, S²(add, 2, 3), 4))"},
+ {"source":"begin while ¬ M=N do if M>N then M:=M-N else N:=N-M end","term":"WH(S¹(neg, S²(eq, M⇒, N⇒)), IF(S²(gr, M⇒, N⇒), AS^M(S²(sub, M⇒, N⇒)), AS^N(S²(sub, N⇒, M⇒))))"}
+]
