@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sipl-sofia-toolkit"
+version = "1.0.0"
+description = "SIPL syntax, interpreter and compositional semantics"
+requires-python = ">=3.10"
+authors = [{name = "Соболева Софія Юріївна"}]
+dependencies = []
+
+[project.scripts]
+sipl = "sipl.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
