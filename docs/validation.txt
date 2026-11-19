@@ -1,0 +1,49 @@
+test_commands (test_cli.CliTests.test_commands) ... ok
+test_exit_codes (test_cli.CliTests.test_exit_codes) ... ok
+test_invalid_arguments_io (test_cli.CliTests.test_invalid_arguments_io) ... ok
+test_real_process (test_cli.CliTests.test_real_process) ... ok
+test_text_mode (test_cli.CliTests.test_text_mode) ... ok
+test_conditions_and_blocks (test_execution.ExecutionTests.test_conditions_and_blocks) ... ok
+test_examples (test_execution.ExecutionTests.test_examples) ... ok
+test_invalid_inputs (test_execution.ExecutionTests.test_invalid_inputs) ... ok
+test_limits (test_execution.ExecutionTests.test_limits) ... ok
+test_new_inputs (test_execution.ExecutionTests.test_new_inputs) ... ok
+test_trace_copy (test_execution.ExecutionTests.test_trace_copy) ... ok
+test_undefined_and_strict_or (test_execution.ExecutionTests.test_undefined_and_strict_or) ... ok
+test_unselected_branch (test_execution.ExecutionTests.test_unselected_branch) ... ok
+test_errors_and_limits (test_parser.ParserTests.test_errors_and_limits) ... ok
+test_negative (test_parser.ParserTests.test_negative) ... ok
+test_positive (test_parser.ParserTests.test_positive) ... ok
+test_precedence (test_parser.ParserTests.test_precedence) ... ok
+test_sequence_scope (test_parser.ParserTests.test_sequence_scope) ... ok
+test_spans (test_parser.ParserTests.test_spans) ... ok
+test_deep_execution (test_resources.ResourceTests.test_deep_execution) ... ok
+test_integer_bound (test_resources.ResourceTests.test_integer_bound) ... ok
+test_invalid_primitive (test_resources.ResourceTests.test_invalid_primitive) ... ok
+test_all_payloads (test_schema.SchemaTests.test_all_payloads) ... ok
+test_course_gcd (test_semantics.SemanticsTests.test_course_gcd) ... ok
+test_golden (test_semantics.SemanticsTests.test_golden) ... ok
+test_rule_trace (test_semantics.SemanticsTests.test_rule_trace) ... ok
+test_wrong_nodes (test_semantics.SemanticsTests.test_wrong_nodes) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.709s
+
+OK
+Name                               Stmts   Miss  Cover
+------------------------------------------------------
+src/sipl/__init__.py                   5      0   100%
+src/sipl/__main__.py                   2      2     0%
+src/sipl/ast.py                       74      0   100%
+src/sipl/cli.py                       77      3    96%
+src/sipl/diagnostics.py               13      0   100%
+src/sipl/interpreter/__init__.py      54      3    94%
+src/sipl/lexer.py                     39      0   100%
+src/sipl/parser.py                   136      0   100%
+src/sipl/runtime.py                   84      0   100%
+src/sipl/semantics/__init__.py         4      0   100%
+src/sipl/semantics/build.py           35      0   100%
+src/sipl/semantics/evaluate.py        54      2    96%
+src/sipl/semantics/terms.py           72      0   100%
+------------------------------------------------------
+TOTAL                                649     10    98%

@@ -1,0 +1,799 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SIPL CLI JSON 1.0",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "command": {
+      "enum": [
+        "parse",
+        "check",
+        "run",
+        "trace",
+        "term",
+        "eval-term",
+        null
+      ]
+    },
+    "ok": {
+      "type": "boolean"
+    },
+    "data": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ast": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "ast"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "valid": {
+              "const": true
+            }
+          },
+          "required": [
+            "valid"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "term": {
+              "$ref": "#/$defs/term"
+            }
+          },
+          "required": [
+            "text",
+            "term"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "$ref": "#/$defs/result"
+        }
+      ]
+    },
+    "diagnostic": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/diagnostic"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "command",
+    "ok",
+    "data",
+    "diagnostic"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "span": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "column": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "end_line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "end_column": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "line",
+        "column",
+        "end_line",
+        "end_column"
+      ],
+      "additionalProperties": false
+    },
+    "state": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Z][A-Z0-9_]*$"
+      },
+      "additionalProperties": {
+        "type": "integer"
+      }
+    },
+    "ast": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Num"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "value": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Var"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Binary"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "op": {
+              "enum": [
+                "+",
+                "-",
+                "*"
+              ]
+            },
+            "left": {
+              "$ref": "#/$defs/ast"
+            },
+            "right": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "op",
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Compare"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "op": {
+              "enum": [
+                "=",
+                ">"
+              ]
+            },
+            "left": {
+              "$ref": "#/$defs/ast"
+            },
+            "right": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "op",
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Or"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "left": {
+              "$ref": "#/$defs/ast"
+            },
+            "right": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Not"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "operand": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "operand"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Assign"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "name": {
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "name",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Seq"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "first": {
+              "$ref": "#/$defs/ast"
+            },
+            "second": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "first",
+            "second"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "If"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "condition": {
+              "$ref": "#/$defs/ast"
+            },
+            "yes": {
+              "$ref": "#/$defs/ast"
+            },
+            "no": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "condition",
+            "yes",
+            "no"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "While"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "condition": {
+              "$ref": "#/$defs/ast"
+            },
+            "body": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "condition",
+            "body"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Block"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "body": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "body"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Skip"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            }
+          },
+          "required": [
+            "type",
+            "span"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Prog"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "body": {
+              "$ref": "#/$defs/ast"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "body"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "term": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Const"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "value": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Dnm"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "SuperA"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "function": {
+              "enum": [
+                "add",
+                "sub",
+                "mult"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/term"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "function",
+            "args"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "SuperB"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "function": {
+              "enum": [
+                "eq",
+                "gr",
+                "or",
+                "neg"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/term"
+              },
+              "minItems": 1,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "function",
+            "args"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "AS"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "name": {
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/term"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "name",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Compose"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "first": {
+              "$ref": "#/$defs/term"
+            },
+            "second": {
+              "$ref": "#/$defs/term"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "first",
+            "second"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "IF"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "condition": {
+              "$ref": "#/$defs/term"
+            },
+            "yes": {
+              "$ref": "#/$defs/term"
+            },
+            "no": {
+              "$ref": "#/$defs/term"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "condition",
+            "yes",
+            "no"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "WH"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            },
+            "condition": {
+              "$ref": "#/$defs/term"
+            },
+            "body": {
+              "$ref": "#/$defs/term"
+            }
+          },
+          "required": [
+            "type",
+            "span",
+            "condition",
+            "body"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Id"
+            },
+            "span": {
+              "$ref": "#/$defs/span"
+            }
+          },
+          "required": [
+            "type",
+            "span"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "diagnostic": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "enum": [
+            "E_LEX",
+            "E_SYNTAX",
+            "E_INPUT",
+            "E_IO",
+            "E_UNDEFINED",
+            "E_LIMIT",
+            "E_RESOURCE"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "span": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/span"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "span"
+      ],
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "enum": [
+            "BeforeStatement",
+            "AfterStatement",
+            "VariableChanged",
+            "ConditionChecked",
+            "RuleEnter",
+            "RuleApplied",
+            "Finished",
+            "Failed"
+          ]
+        },
+        "span": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/span"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "details": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "index",
+        "kind",
+        "span",
+        "state",
+        "details"
+      ],
+      "additionalProperties": false
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "finished",
+            "undefined",
+            "limit_exceeded",
+            "resource_exceeded"
+          ]
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "steps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/event"
+          }
+        },
+        "diagnostic": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/diagnostic"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "state",
+        "steps",
+        "events",
+        "diagnostic"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,640 @@
+{
+  "schema_version": "1.0",
+  "command": "trace",
+  "ok": true,
+  "data": {
+    "status": "finished",
+    "state": {
+      "X": 5,
+      "Y": 0,
+      "R": 25
+    },
+    "steps": 33,
+    "events": [
+      {
+        "index": 0,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 8,
+          "end": 77,
+          "line": 2,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 2
+        },
+        "details": {
+          "node": "Seq"
+        }
+      },
+      {
+        "index": 1,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 8,
+          "end": 14,
+          "line": 2,
+          "column": 3,
+          "end_line": 2,
+          "end_column": 9
+        },
+        "state": {
+          "X": 5,
+          "Y": 2
+        },
+        "details": {
+          "node": "Assign"
+        }
+      },
+      {
+        "index": 2,
+        "kind": "VariableChanged",
+        "span": {
+          "start": 8,
+          "end": 14,
+          "line": 2,
+          "column": 3,
+          "end_line": 2,
+          "end_column": 9
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "name": "R",
+          "old": null,
+          "new": 1
+        }
+      },
+      {
+        "index": 3,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 8,
+          "end": 14,
+          "line": 2,
+          "column": 3,
+          "end_line": 2,
+          "end_column": 9
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "node": "Assign"
+        }
+      },
+      {
+        "index": 4,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 18,
+          "end": 77,
+          "line": 3,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "node": "While"
+        }
+      },
+      {
+        "index": 5,
+        "kind": "ConditionChecked",
+        "span": {
+          "start": 24,
+          "end": 29,
+          "line": 3,
+          "column": 9,
+          "end_line": 3,
+          "end_column": 14
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "value": true,
+          "owner": "While"
+        }
+      },
+      {
+        "index": 6,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 35,
+          "end": 77,
+          "line": 4,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "node": "Block"
+        }
+      },
+      {
+        "index": 7,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 45,
+          "end": 71,
+          "line": 5,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "node": "Seq"
+        }
+      },
+      {
+        "index": 8,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 45,
+          "end": 55,
+          "line": 5,
+          "column": 5,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "node": "Assign"
+        }
+      },
+      {
+        "index": 9,
+        "kind": "VariableChanged",
+        "span": {
+          "start": 45,
+          "end": 55,
+          "line": 5,
+          "column": 5,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 5
+        },
+        "details": {
+          "name": "R",
+          "old": 1,
+          "new": 5
+        }
+      },
+      {
+        "index": 10,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 45,
+          "end": 55,
+          "line": 5,
+          "column": 5,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 5
+        },
+        "details": {
+          "node": "Assign"
+        }
+      },
+      {
+        "index": 11,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 61,
+          "end": 71,
+          "line": 6,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 5
+        },
+        "details": {
+          "node": "Assign"
+        }
+      },
+      {
+        "index": 12,
+        "kind": "VariableChanged",
+        "span": {
+          "start": 61,
+          "end": 71,
+          "line": 6,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "name": "Y",
+          "old": 2,
+          "new": 1
+        }
+      },
+      {
+        "index": 13,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 61,
+          "end": 71,
+          "line": 6,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "node": "Assign"
+        }
+      },
+      {
+        "index": 14,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 45,
+          "end": 71,
+          "line": 5,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "node": "Seq"
+        }
+      },
+      {
+        "index": 15,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 35,
+          "end": 77,
+          "line": 4,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "node": "Block"
+        }
+      },
+      {
+        "index": 16,
+        "kind": "ConditionChecked",
+        "span": {
+          "start": 24,
+          "end": 29,
+          "line": 3,
+          "column": 9,
+          "end_line": 3,
+          "end_column": 14
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "value": true,
+          "owner": "While"
+        }
+      },
+      {
+        "index": 17,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 35,
+          "end": 77,
+          "line": 4,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "node": "Block"
+        }
+      },
+      {
+        "index": 18,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 45,
+          "end": 71,
+          "line": 5,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "node": "Seq"
+        }
+      },
+      {
+        "index": 19,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 45,
+          "end": 55,
+          "line": 5,
+          "column": 5,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "node": "Assign"
+        }
+      },
+      {
+        "index": 20,
+        "kind": "VariableChanged",
+        "span": {
+          "start": 45,
+          "end": 55,
+          "line": 5,
+          "column": 5,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 25
+        },
+        "details": {
+          "name": "R",
+          "old": 5,
+          "new": 25
+        }
+      },
+      {
+        "index": 21,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 45,
+          "end": 55,
+          "line": 5,
+          "column": 5,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 25
+        },
+        "details": {
+          "node": "Assign"
+        }
+      },
+      {
+        "index": 22,
+        "kind": "BeforeStatement",
+        "span": {
+          "start": 61,
+          "end": 71,
+          "line": 6,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 25
+        },
+        "details": {
+          "node": "Assign"
+        }
+      },
+      {
+        "index": 23,
+        "kind": "VariableChanged",
+        "span": {
+          "start": 61,
+          "end": 71,
+          "line": 6,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "name": "Y",
+          "old": 1,
+          "new": 0
+        }
+      },
+      {
+        "index": 24,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 61,
+          "end": 71,
+          "line": 6,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "node": "Assign"
+        }
+      },
+      {
+        "index": 25,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 45,
+          "end": 71,
+          "line": 5,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "node": "Seq"
+        }
+      },
+      {
+        "index": 26,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 35,
+          "end": 77,
+          "line": 4,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "node": "Block"
+        }
+      },
+      {
+        "index": 27,
+        "kind": "ConditionChecked",
+        "span": {
+          "start": 24,
+          "end": 29,
+          "line": 3,
+          "column": 9,
+          "end_line": 3,
+          "end_column": 14
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "value": false,
+          "owner": "While"
+        }
+      },
+      {
+        "index": 28,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 18,
+          "end": 77,
+          "line": 3,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "node": "While"
+        }
+      },
+      {
+        "index": 29,
+        "kind": "AfterStatement",
+        "span": {
+          "start": 8,
+          "end": 77,
+          "line": 2,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "node": "Seq"
+        }
+      },
+      {
+        "index": 30,
+        "kind": "Finished",
+        "span": null,
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {}
+      }
+    ],
+    "diagnostic": null
+  },
+  "diagnostic": null
+}

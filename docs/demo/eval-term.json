@@ -1,0 +1,915 @@
+{
+  "schema_version": "1.0",
+  "command": "eval-term",
+  "ok": true,
+  "data": {
+    "status": "finished",
+    "state": {
+      "X": 5,
+      "Y": 0,
+      "R": 25
+    },
+    "steps": 31,
+    "events": [
+      {
+        "index": 0,
+        "kind": "RuleEnter",
+        "span": {
+          "start": 8,
+          "end": 77,
+          "line": 2,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 2
+        },
+        "details": {
+          "rule": "AF_SEQ"
+        }
+      },
+      {
+        "index": 1,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 13,
+          "end": 14,
+          "line": 2,
+          "column": 8,
+          "end_line": 2,
+          "end_column": 9
+        },
+        "state": {
+          "X": 5,
+          "Y": 2
+        },
+        "details": {
+          "rule": "AF_CONST",
+          "term_type": "Const",
+          "result": 1
+        }
+      },
+      {
+        "index": 2,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 8,
+          "end": 14,
+          "line": 2,
+          "column": 3,
+          "end_line": 2,
+          "end_column": 9
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "rule": "AF_AS",
+          "before": {
+            "X": 5,
+            "Y": 2
+          },
+          "name": "R",
+          "value": 1
+        }
+      },
+      {
+        "index": 3,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 24,
+          "end": 25,
+          "line": 3,
+          "column": 9,
+          "end_line": 3,
+          "end_column": 10
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "rule": "AF_DNM",
+          "term_type": "Dnm",
+          "result": 2,
+          "name": "Y"
+        }
+      },
+      {
+        "index": 4,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 28,
+          "end": 29,
+          "line": 3,
+          "column": 13,
+          "end_line": 3,
+          "end_column": 14
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "rule": "AF_CONST",
+          "term_type": "Const",
+          "result": 0
+        }
+      },
+      {
+        "index": 5,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 24,
+          "end": 29,
+          "line": 3,
+          "column": 9,
+          "end_line": 3,
+          "end_column": 14
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "rule": "AF_S",
+          "term_type": "SuperB",
+          "result": true,
+          "function": "gr",
+          "arguments": [
+            2,
+            0
+          ]
+        }
+      },
+      {
+        "index": 6,
+        "kind": "RuleEnter",
+        "span": {
+          "start": 18,
+          "end": 77,
+          "line": 3,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "rule": "AF_WH",
+          "condition": true,
+          "iteration": 0
+        }
+      },
+      {
+        "index": 7,
+        "kind": "RuleEnter",
+        "span": {
+          "start": 45,
+          "end": 71,
+          "line": 5,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "rule": "AF_SEQ"
+        }
+      },
+      {
+        "index": 8,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 50,
+          "end": 51,
+          "line": 5,
+          "column": 10,
+          "end_line": 5,
+          "end_column": 11
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "rule": "AF_DNM",
+          "term_type": "Dnm",
+          "result": 1,
+          "name": "R"
+        }
+      },
+      {
+        "index": 9,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 54,
+          "end": 55,
+          "line": 5,
+          "column": 14,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "rule": "AF_DNM",
+          "term_type": "Dnm",
+          "result": 5,
+          "name": "X"
+        }
+      },
+      {
+        "index": 10,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 50,
+          "end": 55,
+          "line": 5,
+          "column": 10,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 1
+        },
+        "details": {
+          "rule": "AF_S",
+          "term_type": "SuperA",
+          "result": 5,
+          "function": "mult",
+          "arguments": [
+            1,
+            5
+          ]
+        }
+      },
+      {
+        "index": 11,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 45,
+          "end": 55,
+          "line": 5,
+          "column": 5,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_AS",
+          "before": {
+            "X": 5,
+            "Y": 2,
+            "R": 1
+          },
+          "name": "R",
+          "value": 5
+        }
+      },
+      {
+        "index": 12,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 66,
+          "end": 67,
+          "line": 6,
+          "column": 10,
+          "end_line": 6,
+          "end_column": 11
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_DNM",
+          "term_type": "Dnm",
+          "result": 2,
+          "name": "Y"
+        }
+      },
+      {
+        "index": 13,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 70,
+          "end": 71,
+          "line": 6,
+          "column": 14,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_CONST",
+          "term_type": "Const",
+          "result": 1
+        }
+      },
+      {
+        "index": 14,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 66,
+          "end": 71,
+          "line": 6,
+          "column": 10,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 2,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_S",
+          "term_type": "SuperA",
+          "result": 1,
+          "function": "sub",
+          "arguments": [
+            2,
+            1
+          ]
+        }
+      },
+      {
+        "index": 15,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 61,
+          "end": 71,
+          "line": 6,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_AS",
+          "before": {
+            "X": 5,
+            "Y": 2,
+            "R": 5
+          },
+          "name": "Y",
+          "value": 1
+        }
+      },
+      {
+        "index": 16,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 45,
+          "end": 71,
+          "line": 5,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_SEQ",
+          "before": {
+            "X": 5,
+            "Y": 2,
+            "R": 1
+          }
+        }
+      },
+      {
+        "index": 17,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 24,
+          "end": 25,
+          "line": 3,
+          "column": 9,
+          "end_line": 3,
+          "end_column": 10
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_DNM",
+          "term_type": "Dnm",
+          "result": 1,
+          "name": "Y"
+        }
+      },
+      {
+        "index": 18,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 28,
+          "end": 29,
+          "line": 3,
+          "column": 13,
+          "end_line": 3,
+          "end_column": 14
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_CONST",
+          "term_type": "Const",
+          "result": 0
+        }
+      },
+      {
+        "index": 19,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 24,
+          "end": 29,
+          "line": 3,
+          "column": 9,
+          "end_line": 3,
+          "end_column": 14
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_S",
+          "term_type": "SuperB",
+          "result": true,
+          "function": "gr",
+          "arguments": [
+            1,
+            0
+          ]
+        }
+      },
+      {
+        "index": 20,
+        "kind": "RuleEnter",
+        "span": {
+          "start": 18,
+          "end": 77,
+          "line": 3,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_WH",
+          "condition": true,
+          "iteration": 1
+        }
+      },
+      {
+        "index": 21,
+        "kind": "RuleEnter",
+        "span": {
+          "start": 45,
+          "end": 71,
+          "line": 5,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_SEQ"
+        }
+      },
+      {
+        "index": 22,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 50,
+          "end": 51,
+          "line": 5,
+          "column": 10,
+          "end_line": 5,
+          "end_column": 11
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_DNM",
+          "term_type": "Dnm",
+          "result": 5,
+          "name": "R"
+        }
+      },
+      {
+        "index": 23,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 54,
+          "end": 55,
+          "line": 5,
+          "column": 14,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_DNM",
+          "term_type": "Dnm",
+          "result": 5,
+          "name": "X"
+        }
+      },
+      {
+        "index": 24,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 50,
+          "end": 55,
+          "line": 5,
+          "column": 10,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 5
+        },
+        "details": {
+          "rule": "AF_S",
+          "term_type": "SuperA",
+          "result": 25,
+          "function": "mult",
+          "arguments": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "index": 25,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 45,
+          "end": 55,
+          "line": 5,
+          "column": 5,
+          "end_line": 5,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_AS",
+          "before": {
+            "X": 5,
+            "Y": 1,
+            "R": 5
+          },
+          "name": "R",
+          "value": 25
+        }
+      },
+      {
+        "index": 26,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 66,
+          "end": 67,
+          "line": 6,
+          "column": 10,
+          "end_line": 6,
+          "end_column": 11
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_DNM",
+          "term_type": "Dnm",
+          "result": 1,
+          "name": "Y"
+        }
+      },
+      {
+        "index": 27,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 70,
+          "end": 71,
+          "line": 6,
+          "column": 14,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_CONST",
+          "term_type": "Const",
+          "result": 1
+        }
+      },
+      {
+        "index": 28,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 66,
+          "end": 71,
+          "line": 6,
+          "column": 10,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 1,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_S",
+          "term_type": "SuperA",
+          "result": 0,
+          "function": "sub",
+          "arguments": [
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "index": 29,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 61,
+          "end": 71,
+          "line": 6,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_AS",
+          "before": {
+            "X": 5,
+            "Y": 1,
+            "R": 25
+          },
+          "name": "Y",
+          "value": 0
+        }
+      },
+      {
+        "index": 30,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 45,
+          "end": 71,
+          "line": 5,
+          "column": 5,
+          "end_line": 6,
+          "end_column": 15
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_SEQ",
+          "before": {
+            "X": 5,
+            "Y": 1,
+            "R": 5
+          }
+        }
+      },
+      {
+        "index": 31,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 24,
+          "end": 25,
+          "line": 3,
+          "column": 9,
+          "end_line": 3,
+          "end_column": 10
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_DNM",
+          "term_type": "Dnm",
+          "result": 0,
+          "name": "Y"
+        }
+      },
+      {
+        "index": 32,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 28,
+          "end": 29,
+          "line": 3,
+          "column": 13,
+          "end_line": 3,
+          "end_column": 14
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_CONST",
+          "term_type": "Const",
+          "result": 0
+        }
+      },
+      {
+        "index": 33,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 24,
+          "end": 29,
+          "line": 3,
+          "column": 9,
+          "end_line": 3,
+          "end_column": 14
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_S",
+          "term_type": "SuperB",
+          "result": false,
+          "function": "gr",
+          "arguments": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "index": 34,
+        "kind": "RuleEnter",
+        "span": {
+          "start": 18,
+          "end": 77,
+          "line": 3,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_WH",
+          "condition": false,
+          "iteration": 2
+        }
+      },
+      {
+        "index": 35,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 18,
+          "end": 77,
+          "line": 3,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_WH",
+          "before": {
+            "X": 5,
+            "Y": 2,
+            "R": 1
+          },
+          "iterations": 2
+        }
+      },
+      {
+        "index": 36,
+        "kind": "RuleApplied",
+        "span": {
+          "start": 8,
+          "end": 77,
+          "line": 2,
+          "column": 3,
+          "end_line": 7,
+          "end_column": 6
+        },
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {
+          "rule": "AF_SEQ",
+          "before": {
+            "X": 5,
+            "Y": 2
+          }
+        }
+      },
+      {
+        "index": 37,
+        "kind": "Finished",
+        "span": null,
+        "state": {
+          "X": 5,
+          "Y": 0,
+          "R": 25
+        },
+        "details": {}
+      }
+    ],
+    "diagnostic": null
+  },
+  "diagnostic": null
+}

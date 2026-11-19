@@ -1,0 +1,7 @@
+Clean wheel validation (Python 3.12, Linux; isolated mode -I)
+run power: PASS, state={'X': 5, 'Y': 0, 'R': 25}
+eval-term power: PASS, state={'X': 5, 'Y': 0, 'R': 25}
+run gcd: PASS, state={'M': 8, 'N': 8}
+eval-term gcd: PASS, state={'M': 8, 'N': 8}
+run sum_even: PASS, state={'N': 3, 'R': 12, 'I': 4}
+eval-term sum_even: PASS, state={'N': 3, 'R': 12, 'I': 4}
